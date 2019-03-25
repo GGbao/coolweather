@@ -2,7 +2,7 @@ package com.coolweather.android.gson;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Updata {
+public class Update {
     @SerializedName("loc")
-    public String updataTime;
+    public String updateTime;
 }

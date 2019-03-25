@@ -17,17 +17,16 @@
             android:textColor="#fff"
             android:textSize="20sp"
             />
+
         <TextView
             android:id="@+id/quality_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
             android:layout_alignParentRight="true"
             android:layout_marginTop="15dp"
-            android:text="优"
+            android:layout_marginRight="15dp"
             android:textColor="#fff"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -59,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="AOI指数"
+                    android:text="AQI指数"
                     android:textColor="#fff"
                     />
             </LinearLayout>

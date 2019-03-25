@@ -41,7 +41,6 @@ public class Utility {
      * 解析和处理服务器返回的市级数据
      * */
     public static boolean handleCityResponse(String response, int provinceId) {
-        Log.d("City", "handleCityResponse: " + response);
         if (!TextUtils.isEmpty(response)) {
             try {
                 JSONArray allCities = new JSONArray(response);
@@ -53,7 +52,6 @@ public class Utility {
                     city.setProvinceId(provinceId);
                     city.save();
                 }
-                Log.d("Cool", "城市数据长度:" + allCities.length());
                 return true;
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -65,7 +63,6 @@ public class Utility {
 
     public static boolean handleCountyResponse(String response, int cityId) {
         if (!TextUtils.isEmpty(response)) {
-            Log.d("County", "handleCountyResponse:" + response);
             try {
                 JSONArray allCounty = new JSONArray(response);
                 for (int i = 0; i < allCounty.length(); i++) {
@@ -94,6 +91,7 @@ public class Utility {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.getJSONArray("HeWeather6");
             String weatherContent = jsonArray.getJSONObject(0).toString();
+            Log.i("Utility", "返回的天气信息: "+weatherContent);
             return new Gson().fromJson(weatherContent, Weather.class);
         } catch (Exception e) {
             e.printStackTrace();
